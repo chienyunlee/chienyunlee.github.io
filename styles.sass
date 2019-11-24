@@ -1,0 +1,1070 @@
+/* Sass Document */
+
+/* Mixin */
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro:400,700,900|Open+Sans:300,400,700&display=swap')
+
+@mixin size($w,$h:$w)
+	width: $w
+	height: $h
+  
+@mixin flex($j:center,$a:center)
+	display: flex
+	justify-content: $j
+	align-items: $a
+  
+@mixin abpos($l:initial,$t:initial)
+	position: absolute
+	left: $l
+	top: $t
+
+@mixin fxpos($l:initial,$t:initial)
+	position: fixed
+	left: $l
+	top: $t
+
+/* Color */
+$colorBlue: #1a3fc4
+$colorPink: #f5adcd
+$colorPinkOrange: #fe9fb8
+$colorPinkPurple: #e18aea
+$colorPurple: #b69be9
+
+
+/* Default Setting */
+*
+	font-family: 'Open Sans', '微軟正黑體', sans-serif
+	position: relative
+	margin: 0
+	padding: 0
+	color: #fff
+	box-sizing: border-box
+
+html, body
+	+size(100%)
+
+h1
+	font-family: 'Maven Pro', sans-serif
+	font-size: 52px
+	font-weight: 700
+	line-height: 68px
+
+h2
+	font-family: 'Maven Pro', sans-serif
+	font-size: 45px
+	font-weight: 700
+	line-height: 52px
+
+h3 	
+	font-family: 'Maven Pro', sans-serif
+	font-size: 24px
+	font-weight: 400
+	line-height: 30px
+
+h4
+	font-family: 'Maven Pro', sans-serif
+	font-size: 24px
+	font-weight: 700
+	line-height: 32px
+
+h5
+	font-size: 14px
+	font-weight: 300
+	letter-spacing: 18px
+
+p
+	font-size: 14px
+	font-weight: 300
+	letter-spacing: 1px
+
+a
+	font-weight: 300
+	letter-spacing: 2px
+	text-decoration: none
+	cursor: pointer
+
+ul
+	list-style-type: none
+
+input
+	outline: none
+
+textarea
+	outline: none
+	resize: none
+
+button
+	outline: none
+	border: 0px
+
+
+::-webkit-input-placeholder
+	color: rgba(255,255,255,0.5)
+
+::placeholder
+	color: rgba(255,255,255,0.5)
+
+
+/* Common Element */
+#main-border
+	.border-top, .border-right, .border-bottom, .border-left
+		background-color: $colorBlue
+		position: fixed
+		z-index: 100
+
+	.border-top
+		+size(100%,8px)
+		top: 0
+		left: 0
+
+	.border-right
+		+size(8px,100%)
+		top: 0
+		right: 0
+
+	.border-bottom
+		+size(100%,8px)
+		bottom: 0
+		left: 0
+
+	.border-left
+		+size(8px,100%)
+		top: 0
+		left: 0
+	
+#main-header
+	+fxpos(0,0)
+	width: 100%
+	z-index: 100
+
+	.header-container
+		+flex(space-between,flex-start)
+		padding: 30px 30px 0 30px
+	
+	.header-left
+		a.logo
+			+size(60px,55px)
+			display: inline-block
+			background: url(images/logo_ldrr-w.svg) no-repeat 
+
+			&:hover
+				opacity: 0.5
+				transition: opacity 0.3s ease-in
+
+	.header-right
+		+flex
+
+		a.facebook
+			+size(10px,18px)
+			display: inline-block
+			background: url(images/logo_facebook-w.svg) no-repeat 
+
+			&:hover
+				opacity: 0.5
+				transition: opacity 0.3s ease-in
+
+		a.twitter
+			+size(22px,18px)
+			display: inline-block
+			margin-left: 15px
+			background: url(images/logo_twitter-w.svg) no-repeat 
+			
+			&:hover
+				opacity: 0.5
+				transition: opacity 0.3s ease-in
+
+		a.instagram
+			+size(22px,22px)
+			display: inline-block
+			margin-left: 15px
+			background: url(images/logo_instagram-w.svg) no-repeat 
+			
+			&:hover
+				opacity: 0.5
+				transition: opacity 0.3s ease-in
+
+
+#main-footer
+	position: fixed
+	right: 0
+	bottom: 0
+	z-index: 100
+
+	.footer-container
+		+flex(flex-end)
+		padding: 25px
+
+		p
+			font-size: 10px
+			letter-spacing: 2px
+
+.bold
+	font-weight: 700
+
+.blue
+	color: $colorBlue
+
+.pink
+	color: $colorPink
+
+.mb-80
+	margin-bottom: 80px
+
+.mb-60
+	margin-bottom: 60px
+
+.mb-40
+	margin-bottom: 40px
+
+.mb-30
+	margin-bottom: 30px
+
+.mb-20
+	margin-bottom: 20px
+
+.btn-main
+	+flex
+	+size(300px,70px)
+	border: 1px solid #fff
+	border-radius: 2px
+	font-size: 18px
+
+	&:hover
+		background: $colorBlue
+		transition: background 0.3s ease-in
+	
+.btn-heart
+	+size(110px,110px)
+	+flex
+	background-color: $colorBlue
+	border-radius: 99em
+	cursor: pointer
+
+	&:before
+		+size(120px,120px)
+		+abpos(-5px,-5px)
+		display: block
+		content: ""
+		background-color: rgba(26,63,196,0.2)
+		border-radius: 99em
+
+	img
+		+size(40px)
+		animation: Beating 0.5s ease-in infinite
+
+	@keyframes Beating
+		0%
+			transform: scale(1.1)
+		100%
+			transform: scale(1)
+
+.playing 
+	opacity: 0.5
+	cursor: none
+
+	img
+		animation: none
+
+.scroll
+	+size(220px,130px)
+	flex-direction: column
+	position: absolute
+	left: calc(50% - 110px)
+	
+	p
+		height: 20px
+		font-size: 14px
+		font-weight: 300
+		letter-spacing: 2px
+
+	.line
+		+size(1px,100px)
+		background-color: #fff
+		animation: line-length 3s ease-in infinite
+
+	@keyframes line-length
+		0%
+			height: 0
+
+		25%
+			height: 100px
+
+.scroll-down
+	+flex (flex-start,center)
+	bottom: 0
+	p
+		margin-bottom: 10px
+
+.scroll-up
+	+flex (flex-end,center)
+	top: 0
+	.line
+		margin-bottom: 10px	
+
+.bg-video
+	+size(100%)
+	+abpos(0,0)
+	overflow: hidden
+
+	video
+		min-width: 100%
+		min-height: 100%
+
+
+.fade-in
+	animation: FadeIn 1s ease-in
+	animation-fill-mode: forwards
+
+	@keyframes FadeIn
+		from
+			opacity: 0
+			transform: translateY(10px)
+		to
+			opacity: 1
+			transform: translateY(0px)
+
+
+.fade-out
+	animation: FadeOut 0.5s ease-in
+	animation-fill-mode: forwards
+
+	@keyframes FadeOut
+		from
+			opacity: 1
+		to
+			opacity: 0
+
+.fade-in-r
+	animation: FadeInR 0.5s ease-in
+	animation-fill-mode: forwards
+
+	@keyframes FadeInR
+		from
+			opacity: 0
+			transform: translateX(-10px)
+		to
+			opacity: 1
+			transform: translateX(0px)
+
+.fade-in-s
+	animation: FadeInS 1s ease-in
+	animation-fill-mode: forwards
+
+	@keyframes FadeInS
+		from
+			opacity: 0
+		to
+			opacity: 1
+
+
+/* Page Setting */
+.intro
+	.container
+		+size(100%)
+		//background-color: $colorPurple
+	
+		.part1,.part2,.part3
+			+abpos(120px,22%)
+
+			h1,a
+				opacity: 0
+
+		.fade-out1
+				animation-delay: 5s
+	
+		.fade-out2
+				animation-delay: 10.5s
+		
+		.part1 .fade-in:nth-child(1)
+			animation-delay: 0s
+
+		.part1 .fade-in:nth-child(2)
+			animation-delay: 1s
+
+		.part1 .fade-in:nth-child(3)
+			animation-delay: 2s
+
+		.part1 .fade-in:nth-child(4)
+			animation-delay: 3s
+
+		.part2 .fade-in:nth-child(1)
+			animation-delay: 5.5s
+
+		.part2 .fade-in:nth-child(2)
+			animation-delay: 6.5s
+
+		.part2 .fade-in:nth-child(3)
+			animation-delay: 7.5s
+
+		.part2 .fade-in:nth-child(4)
+			animation-delay: 8.5s
+
+		.part3 .fade-in:nth-child(1)
+			animation-delay: 11s
+
+		.part3 .fade-in:nth-child(2)
+			animation-delay: 12s
+
+		.part3 .fade-in:nth-child(3)
+			animation-delay: 13s
+
+		.part3 .fade-in:nth-child(4)
+			animation-delay: 14s
+
+		.part3 .fade-in:nth-child(5)
+			animation-delay: 15s
+		
+
+.instructions 
+	.container
+		+size(100%)
+		background-color: $colorBlue
+
+		.part1,.part2,.part3
+			+abpos(120px,22%)
+			
+			h1
+				opacity: 0
+		
+		.fade-out1
+				animation-delay: 6s
+	
+		.fade-out2
+				animation-delay: 13.5s
+		
+		.part1 .fade-in:nth-child(1)
+			animation-delay: 0s
+
+		.part1 .fade-in:nth-child(2)
+			animation-delay: 1s
+
+		.part1 .fade-in:nth-child(3)
+			animation-delay: 2s
+
+		.part1 .fade-in:nth-child(4)
+			animation-delay: 3s
+
+		.part1 .fade-in:nth-child(5)
+			animation-delay: 4s
+
+		.part2 .fade-in:nth-child(1)
+			animation-delay: 6.5s
+
+		.part2 .fade-in:nth-child(2)
+			animation-delay: 7.5s
+
+		.part2 .fade-in:nth-child(3)
+			animation-delay: 8.5s
+
+		.part2 .fade-in:nth-child(4)
+			animation-delay: 9.5s
+
+		.part2 .fade-in:nth-child(5)
+			animation-delay: 10.5s
+
+		.part2 .fade-in:nth-child(6)
+			animation-delay: 11.5s
+
+		.part3 .fade-in:nth-child(1)
+			animation-delay: 14s
+
+		.part3 .fade-in:nth-child(2)
+			animation-delay: 15s
+
+		.part3 .fade-in:nth-child(3)
+			animation-delay: 16s
+
+		.part3 .fade-in:nth-child(4)
+			animation-delay: 17s
+
+		.scroll
+			opacity: 0
+			animation-delay: 18s
+
+
+.outro
+	.container
+		+size(100%)
+		background-color: $colorPurple
+
+		.part1,.part2,.part3
+			+abpos(120px,22%)
+		
+			h1,a
+				opacity: 0
+
+		.fade-out1
+				animation-delay: 5s
+	
+		.fade-out2
+				animation-delay: 10.5s
+		
+		.part1 .fade-in:nth-child(1)
+			animation-delay: 0s
+
+		.part1 .fade-in:nth-child(2)
+			animation-delay: 1s
+
+		.part1 .fade-in:nth-child(3)
+			animation-delay: 2s
+
+		.part1 .fade-in:nth-child(4)
+			animation-delay: 3s
+
+		.part2 .fade-in:nth-child(1)
+			animation-delay: 5.5s
+
+		.part2 .fade-in:nth-child(2)
+			animation-delay: 6.5s
+
+		.part2 .fade-in:nth-child(3)
+			animation-delay: 7.5s
+
+		.part2 .fade-in:nth-child(4)
+			animation-delay: 8.5s
+
+		.part3 .fade-in:nth-child(1)
+			animation-delay: 11s
+
+		.part3 .fade-in:nth-child(2)
+			animation-delay: 12s
+
+		.part3 .fade-in:nth-child(3)
+			animation-delay: 13s
+
+		.part3 .fade-in:nth-child(4)
+			animation-delay: 14s
+
+		.scroll
+			opacity: 0
+			animation-delay: 15s
+
+.chapter
+	.chapter-game
+		.container
+			+size(100%)
+			+flex
+			background: url(images/bg_chapter.jpg) no-repeat
+			background-size: cover
+			
+			.chapter-main
+				+flex(center,flex-start)
+	
+				.chapter-left
+					+flex(center,flex-start)
+					flex-direction: column
+					width: 320px
+					margin-top: 10px
+					margin-right: 25px
+	
+					h5
+						opacity: 0
+
+					h2
+						opacity: 0
+						margin: 10px 0 80px 0
+	
+					h3
+						opacity: 0
+
+					h3:before
+						+size(20px,16px)
+						+abpos(0,-30px)
+						content: " "
+						background: url(images/icon_quote.svg) no-repeat
+	
+					.fade-in-r:nth-child(1)
+						animation-delay: 0s
+					
+					.fade-in-r:nth-child(2)
+						animation-delay: 0.5s
+					
+					.fade-in-r:nth-child(3)
+						animation-delay: 1s
+	
+					.fade-in-r:nth-child(4)
+						animation-delay: 1s
+
+				.chapter-right
+					+flex(center,flex-start)
+					flex-direction: column
+
+					.game
+						+size(800px,450px)
+						background-color: rgba(255,255,255,0.9)
+						border-radius: 2px
+						margin-bottom: 20px
+						opacity: 0
+
+						&:before
+							+size(800px,450px)
+							+abpos(-10px,initial)
+							bottom: -10px
+							content: " "
+							background: url(images/bg_line.png) no-repeat
+	
+						.video-con
+							+size(800px,450px)
+							border: 0px
+							border-radius: 2px
+							overflow: hidden
+	
+					.tips
+						opacity: 0
+						margin-left: -10px
+					
+					.fade-in-r
+						animation-delay: 2s
+	
+					.fade-in
+						animation-duration: 0.5s 
+						animation-delay: 2.5s
+	
+	.chapter-about
+		.container
+			+size(100%)
+			+flex
+
+			.chapter-about-main
+				+flex(center,flex-start)
+				flex-direction: column
+				width: 900px
+
+				h1
+					opacity: 0
+					color: $colorBlue
+				h4
+					opacity: 0
+				
+				.fade-in
+					animation-duration: 0.5s
+	
+				.fade-in:nth-child(1)
+					animation-delay: 0s
+	
+				.fade-in:nth-child(2)
+					animation-delay: 0.5s
+				
+				.fade-in:nth-child(3)
+					animation-delay: 1s
+	
+				.fade-in:nth-child(4)
+					animation-delay: 1.5s
+	
+			.scroll
+				opacity: 0
+				animation-delay: 2s
+
+	
+	ul.chapter-num
+		+abpos(25px,initial)
+		bottom: 15px
+		z-index: 100
+
+		li
+			float: left
+			margin-right: 5px
+
+			a
+				+size(35px,35px)
+				+flex
+				font-family: 'Maven Pro', sans-serif
+				font-size: 12px
+				font-weight: 300
+				letter-spacing: 1px
+				border: 1px solid rgba(255,255,255,0)
+				border-radius: 99em
+				cursor: pointer
+
+				&:hover
+					border: 1px solid rgba(255,255,255,1)
+					transition: border 0.3s ease-in
+
+		li.selected
+			a
+				font-weight: 900
+	
+
+	#chapter-about1, #chapter-about5	
+		.container
+			background-color: $colorPink
+
+
+	#chapter-about2, #chapter-about6
+		.container
+			background-color: $colorPinkOrange
+
+
+	#chapter-about3, #chapter-about7
+		.container
+			background-color: $colorPinkPurple
+
+
+	#chapter-about4, #chapter-about8
+		.container
+			background-color: $colorPurple
+	
+	
+	#chapter-game3
+		.game
+			.btn-reload
+				+size(110px,110px)
+				+flex
+				+abpos
+				z-index: 2
+				right: 50px
+				bottom: 50px
+				background-color: $colorBlue
+				border-radius: 99em
+				cursor: pointer
+
+				&:before
+					+size(120px,120px)
+					+abpos(-5px,-5px)
+					display: block
+					content: ""
+					background-color: rgba(26,63,196,0.2)
+					border-radius: 99em
+
+				img
+					+size(40px)
+					animation: Rotating 3s ease-in infinite
+
+				@keyframes Rotating
+					0%
+						transform: rotate(0)
+					100%
+						transform: rotate(360deg)
+	
+			.btn-heart
+				+abpos
+				z-index: 2
+				right: 50px
+				bottom: 50px
+				background-color: $colorPink
+				cursor: none
+	
+				&:before
+					background-color: rgba(255,93,153,0.2)
+
+			.video-con
+				+abpos(0,0)
+				z-index: 1
+	
+			.disappear
+				display: none
+	
+
+	#chapter-game4
+		#game4
+			.game-left
+				+size(480px,360px)
+				+abpos(80px,initial)
+				bottom: 60px
+				+flex
+				flex-wrap: wrap
+
+				.hole
+					flex: 1 0 33.33%
+					height: 120px
+					overflow: hidden
+
+					&:after
+						+size(100%,10px)
+						+abpos
+						bottom: 0
+						z-index: 2
+						display: block
+						content: ' '
+						background: url('images/4_hole.svg') center no-repeat
+						background-size: 90px 10px
+
+				.nt
+					+size(100%)
+					+abpos(initial,100%)
+					background: url('images/4_nt.svg') center no-repeat
+					background-size: 80px
+					transition: all 0.3s
+
+				.up .nt
+					top: 0
+	
+				.hit .nt
+					animation: HitAction 1s
+	
+					@keyframes HitAction
+						0%
+							background: url('images/4_nt-1.svg') center no-repeat
+							background-size: 85px
+						100%
+							background: url('images/4_nt.svg') center no-repeat
+							background-size: 80px
+
+			.game-right
+				+flex(flex-end,center)
+				flex-direction: column
+				height: 360px
+				+abpos
+				right: 50px
+				bottom: 50px
+
+				.score
+					+size(100%,120px)
+					+flex
+					font-family: 'Maven Pro', sans-serif
+					font-size: 100px
+					font-weight: 700
+					color: $colorBlue
+					margin-bottom: 80px
+	
+	
+	#chapter-game7
+		.game
+			#win-text, #lose-text
+				display: none
+				position: absolute
+				width: 800px
+				height: 450px
+				background-color: #fff
+				line-height: 450px
+				color: $colorBlue
+				z-index: 1000		
+				text-align: center
+				left: 0
+				top: 0
+			.btn-heart
+				+abpos(calc(50% - 55px),calc(50% - 55px))
+				z-index: 1
+
+
+/* Fullpage Adjustment */
+.fp-controlArrow
+	z-index: 100
+	margin-top: 0 !important
+
+	&:hover
+		opacity: 0.5
+		transition: opacity 0.3s ease-in
+	
+.fp-controlArrow.fp-next
+	+size(60px !important,60px !important)
+	+abpos(initial,calc(50% - 30px))
+	right: 8px !important
+	border-width: 0 !important
+	background: url('images/arr_next-b.svg') center no-repeat !important
+
+.fp-controlArrow.fp-prev
+	+size(60px !important,60px !important)
+	+abpos(8px !important,calc(50% - 30px))
+	border-width: 0 !important
+	background: url('images/arr_previous-b.svg') center no-repeat !important
+
+
+.fp-slidesNav
+	left: 25px !important
+	margin-left: 0px !important
+
+.fp-slidesNav.bottom
+	bottom: 12px !important
+
+.fp-slidesNav ul
+		li
+			margin: 7px 10px 7px 0px !important
+			a
+				span
+					background: #fff !important
+
+
+.popup
+	+size(100%)
+	z-index: 1000 !important
+	display: none
+	//+abpos(0,0)
+	margin: auto
+
+	.popup-container
+		+size(1120px,initial)
+		top: calc(50% - 273px)
+		z-index: 1002
+		margin: auto
+
+		.doodle-main
+			+flex(center, flex-end)
+	
+			.doodle-left
+				+flex
+				flex-direction: column
+				margin-right: 20px
+	
+				.doodle-left-top
+					+size(800px,initial)
+					+flex (space-between,center)
+					margin-bottom: 20px
+		
+					h2
+						font-size: 32px
+						line-height: 38px
+						color: $colorPink
+	
+					.doodle-function
+						+size(385px,initial)
+						+flex(space-between,flex-start)
+						flex-direction: column
+						
+						.doodle-color
+							+size(385px,initial)
+							+flex(space-between,center)
+							margin-bottom: 10px
+	
+							.brush-color
+								+size(25px)
+								float: left
+								border: 1px solid #fff
+								border-radius: 99em
+							
+								&:nth-child(1)
+									background-color: #DC5252
+								&:nth-child(2)
+									background-color: #EA8A2F
+								&:nth-child(3)
+									background-color: #F3D72A
+								&:nth-child(4)
+									background-color: #71B639
+								&:nth-child(5)
+									background-color: #45B287
+								&:nth-child(6)
+									background-color: #4496B9
+								&:nth-child(7)
+									background-color: #8F3EB6
+								&:nth-child(8)
+									background-color: #323232
+								&:nth-child(9)
+									background-color: #8C8C8C
+								&:nth-child(10)
+									background-color: #ffffff
+
+							.selected
+								outline: 0px
+								outline-offset: 0
+								border: 3px solid #fff
+		
+						.doodle-size
+							+flex
+	
+							label
+								font-size: 14px
+								font-weight: 300
+								letter-spacing: 2px
+								margin-right: 10px
+							
+							#brush-size 
+								-webkit-appearance: none 
+								width: 340px 
+								height: 25px 
+								background: #fff 
+								border-radius: 99em
+								padding: 2px
+								opacity: 0.7
+
+								&::-webkit-slider-thumb 
+									-webkit-appearance: none 
+									appearance: none 
+									+size(30px,21px) 
+									background: #1A3FC4
+									border-radius: 99em
+									cursor: pointer 
+
+								&::-moz-range-thumb 
+									+size(30px,21px)
+									background: #1A3FC4 
+									border-radius: 99em
+									cursor: pointer 
+
+					.doodle-btn
+						+size(130px,initial)
+						+flex(space-between,center)
+						a
+							+size(60px)
+							+flex
+							border: 1px solid #fff
+							border-radius: 99em
+	
+							&:hover
+								opacity: 0.5
+								transition: opacity 0.3s ease-in
+								
+							img
+								+size(24px)
+						
+				
+				#doodle-area
+					+size(800px,450px)
+					background-color: #fff
+					border-radius: 2px
+
+					&:before
+						+size(800px,450px)
+						+abpos(-10px,initial)
+						bottom: -10px
+						content: " "
+						background: url(images/bg_line.png) no-repeat
+		
+			.doodle-right
+
+				.share-content
+					+size(300px,380px)
+					background-color: rgba(255,255,255,0.1)
+					border: 1px solid #fff
+					border-bottom: 0px
+					border-radius: 2px 2px 0 0
+					padding: 1em
+					font-size: 18px
+					margin-bottom: -5px
+	
+				.btn-main
+					border-radius: 0 0 2px 2px
+					
+					&:hover
+						background-color: $colorPink
+
+		.btn-close
+			+size(30px)
+			+abpos (initial, 0)
+			right: 0
+			background: url('images/icon_close.svg') center no-repeat
+
+	
+	.dismiss
+		+size(100%)
+		+abpos(0,0)
+		z-index: 1001
+		background: $colorBlue
+		opacity: 0.8
+
+
+	.alert
+		+size(100%)
+		+abpos(0,0)
+		z-index: 1003
+		background: rgba(0,0,0,0.6)
+		display: none		
+
+		.alert-container
+			+size(360px,120px)
+			+flex
+			+abpos(calc(50% - 180px),calc(50% - 60px))
+			flex-direction: column
+			background-color: $colorPink
+			border-radius: 10px
+			
+			div
+				+size(120px,initial)
+				+flex(space-between,center)
+				margin-bottom: 10px
+		
+				img
+					+size(30px)
+	
+			p
+				font-family: 'Maven Pro', sans-serif
+				font-size: 24px
+				font-weight: 700
