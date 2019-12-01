@@ -443,7 +443,7 @@ button {
   .about .container .fade-out1 {
     animation-delay: 6s; }
   .about .container .fade-out2 {
-    animation-delay: 13.5s; }
+    animation-delay: 12.5s; }
   .about .container .part1 .fade-in:nth-child(1) {
     animation-delay: 0s; }
   .about .container .part1 .fade-in:nth-child(2) {
@@ -465,7 +465,7 @@ button {
   .about .container .part2 .fade-in:nth-child(5) {
     animation-delay: 10.5s; }
   .about .container .part3 .fade-in:nth-child(1) {
-    animation-delay: 11.5s; }
+    animation-delay: 13s; }
   .about .container .part3 .fade-in:nth-child(2) {
     animation-delay: 14s; }
   .about .container .part3 .fade-in:nth-child(3) {
