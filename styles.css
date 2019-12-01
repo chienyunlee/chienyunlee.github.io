@@ -45,10 +45,13 @@ h5 {
   font-weight: 300;
   letter-spacing: 18px; }
 
+h6 {
+  font-size: 12px;
+  font-weight: 300; }
+
 p {
   font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 1px; }
+  font-weight: 300; }
 
 a {
   font-weight: 300;
@@ -125,6 +128,21 @@ button {
     display: flex;
     justify-content: center;
     align-items: center; }
+    #main-header .header-right a.restart {
+      width: 200px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: #1a3fc4;
+      background-color: #fff;
+      border-radius: 99em; }
+      #main-header .header-right a.restart:hover {
+        opacity: 0.5;
+        transition: opacity 0.3s ease-in; }
     #main-header .header-right a.facebook {
       width: 10px;
       height: 18px;
@@ -168,6 +186,9 @@ button {
 
 .bold {
   font-weight: 700; }
+
+.italic {
+  font-style: italic; }
 
 .blue {
   color: #1a3fc4; }
@@ -321,6 +342,53 @@ button {
     opacity: 0; }
   to {
     opacity: 1; } }
+.ins {
+  width: 800px;
+  height: 450px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 1; }
+  .ins .ins-con {
+    width: 320px;
+    height: initial;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column; }
+    .ins .ins-con .ins-title {
+      width: 100%;
+      height: initial;
+      font-size: 24px;
+      font-weight: 700;
+      color: #1a3fc4;
+      text-align: left;
+      margin-bottom: 10px; }
+    .ins .ins-con .ins-text {
+      font-size: 16px;
+      font-weight: 400;
+      color: #1a3fc4;
+      text-align: left;
+      line-height: 24px;
+      margin-bottom: 20px; }
+      .ins .ins-con .ins-text span {
+        color: #1a3fc4; }
+    .ins .ins-con .ins-btn {
+      width: 320px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #1a3fc4;
+      border-radius: 2px;
+      font-size: 16px;
+      color: #1a3fc4;
+      letter-spacing: 1px; }
+
 /* Page Setting */
 .intro .container {
   width: 100%;
@@ -362,51 +430,51 @@ button {
   .intro .container .part3 .fade-in:nth-child(5) {
     animation-delay: 15s; }
 
-.instructions .container {
+.about .container {
   width: 100%;
   height: 100%;
   background-color: #1a3fc4; }
-  .instructions .container .part1, .instructions .container .part2, .instructions .container .part3 {
+  .about .container .part1, .about .container .part2, .about .container .part3 {
     position: absolute;
     left: 120px;
     top: 22%; }
-    .instructions .container .part1 h1, .instructions .container .part2 h1, .instructions .container .part3 h1 {
+    .about .container .part1 h1, .about .container .part2 h1, .about .container .part3 h1 {
       opacity: 0; }
-  .instructions .container .fade-out1 {
+  .about .container .fade-out1 {
     animation-delay: 6s; }
-  .instructions .container .fade-out2 {
+  .about .container .fade-out2 {
     animation-delay: 13.5s; }
-  .instructions .container .part1 .fade-in:nth-child(1) {
+  .about .container .part1 .fade-in:nth-child(1) {
     animation-delay: 0s; }
-  .instructions .container .part1 .fade-in:nth-child(2) {
+  .about .container .part1 .fade-in:nth-child(2) {
     animation-delay: 1s; }
-  .instructions .container .part1 .fade-in:nth-child(3) {
+  .about .container .part1 .fade-in:nth-child(3) {
     animation-delay: 2s; }
-  .instructions .container .part1 .fade-in:nth-child(4) {
+  .about .container .part1 .fade-in:nth-child(4) {
     animation-delay: 3s; }
-  .instructions .container .part1 .fade-in:nth-child(5) {
+  .about .container .part1 .fade-in:nth-child(5) {
     animation-delay: 4s; }
-  .instructions .container .part2 .fade-in:nth-child(1) {
+  .about .container .part2 .fade-in:nth-child(1) {
     animation-delay: 6.5s; }
-  .instructions .container .part2 .fade-in:nth-child(2) {
+  .about .container .part2 .fade-in:nth-child(2) {
     animation-delay: 7.5s; }
-  .instructions .container .part2 .fade-in:nth-child(3) {
+  .about .container .part2 .fade-in:nth-child(3) {
     animation-delay: 8.5s; }
-  .instructions .container .part2 .fade-in:nth-child(4) {
+  .about .container .part2 .fade-in:nth-child(4) {
     animation-delay: 9.5s; }
-  .instructions .container .part2 .fade-in:nth-child(5) {
+  .about .container .part2 .fade-in:nth-child(5) {
     animation-delay: 10.5s; }
-  .instructions .container .part2 .fade-in:nth-child(6) {
+  .about .container .part3 .fade-in:nth-child(1) {
     animation-delay: 11.5s; }
-  .instructions .container .part3 .fade-in:nth-child(1) {
+  .about .container .part3 .fade-in:nth-child(2) {
     animation-delay: 14s; }
-  .instructions .container .part3 .fade-in:nth-child(2) {
+  .about .container .part3 .fade-in:nth-child(3) {
     animation-delay: 15s; }
-  .instructions .container .part3 .fade-in:nth-child(3) {
+  .about .container .part3 .fade-in:nth-child(4) {
     animation-delay: 16s; }
-  .instructions .container .part3 .fade-in:nth-child(4) {
+  .about .container .part3 .fade-in:nth-child(5) {
     animation-delay: 17s; }
-  .instructions .container .scroll {
+  .about .container .scroll {
     opacity: 0;
     animation-delay: 18s; }
 
@@ -487,6 +555,20 @@ button {
         top: -30px;
         content: " ";
         background: url(images/icon_quote.svg) no-repeat; }
+      .chapter .chapter-game .container .chapter-main .chapter-left .by {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-family: "Maven Pro", sans-serif;
+        font-size: 18px;
+        width: 320px;
+        margin-top: 20px;
+        opacity: 0; }
+        .chapter .chapter-game .container .chapter-main .chapter-left .by i {
+          width: 40px;
+          height: 1px;
+          background-color: #fff;
+          margin-right: 3px; }
       .chapter .chapter-game .container .chapter-main .chapter-left .fade-in-r:nth-child(1) {
         animation-delay: 0s; }
       .chapter .chapter-game .container .chapter-main .chapter-left .fade-in-r:nth-child(2) {
@@ -494,6 +576,8 @@ button {
       .chapter .chapter-game .container .chapter-main .chapter-left .fade-in-r:nth-child(3) {
         animation-delay: 1s; }
       .chapter .chapter-game .container .chapter-main .chapter-left .fade-in-r:nth-child(4) {
+        animation-delay: 1s; }
+      .chapter .chapter-game .container .chapter-main .chapter-left .fade-in-r:nth-child(5) {
         animation-delay: 1s; }
     .chapter .chapter-game .container .chapter-main .chapter-right {
       display: flex;
@@ -524,7 +608,8 @@ button {
           overflow: hidden; }
       .chapter .chapter-game .container .chapter-main .chapter-right .tips {
         opacity: 0;
-        margin-left: -10px; }
+        margin-left: -10px;
+        letter-spacing: 1px; }
       .chapter .chapter-game .container .chapter-main .chapter-right .fade-in-r {
         animation-delay: 2s; }
       .chapter .chapter-game .container .chapter-main .chapter-right .fade-in {
@@ -547,6 +632,8 @@ button {
       color: #1a3fc4; }
     .chapter .chapter-about .container .chapter-about-main h4 {
       opacity: 0; }
+    .chapter .chapter-about .container .chapter-about-main h6 {
+      opacity: 0; }
     .chapter .chapter-about .container .chapter-about-main .fade-in {
       animation-duration: 0.5s; }
     .chapter .chapter-about .container .chapter-about-main .fade-in:nth-child(1) {
@@ -559,7 +646,7 @@ button {
       animation-delay: 1.5s; }
   .chapter .chapter-about .container .scroll {
     opacity: 0;
-    animation-delay: 2s; }
+    animation-delay: 1.8s; }
 .chapter ul.chapter-num {
   position: absolute;
   left: 25px;
@@ -717,17 +804,7 @@ button {
     color: #1a3fc4;
     margin-bottom: 80px; }
 .chapter #chapter-game7 .game #win-text, .chapter #chapter-game7 .game #lose-text {
-  display: none;
-  position: absolute;
-  width: 800px;
-  height: 450px;
-  background-color: #fff;
-  line-height: 450px;
-  color: #1a3fc4;
-  z-index: 1000;
-  text-align: center;
-  left: 0;
-  top: 0; }
+  display: none; }
 .chapter #chapter-game7 .game .btn-heart {
   position: absolute;
   left: calc(50% - 55px);

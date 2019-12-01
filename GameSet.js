@@ -66,34 +66,34 @@ nts.forEach(nt => nt.addEventListener('click', bonk));
 
 
 //---------- Game 5 ----------
-let x = 1;
-let y = 1;
-let easing = 0.05;
-
-function setup() {
-	var game5 = createCanvas(800, 450);
-	game5.parent('game5');
-	game5context = game5.drawingContext;
-	noStroke();
-}
-
-function draw() {
-	game5context.clearRect(0,0,800,450);
-	
-	let targetX = mouseX;
-	let dx = targetX - x;
-	x += dx * easing;
-
-	let targetY = mouseY;
-	let dy = targetY - y;
-	y += dy * easing;
-	
-	var gradient = game5context.createRadialGradient(x, y, 0, x, y, 30);
-	gradient.addColorStop(0, "#446AF3");
-  	gradient.addColorStop(1, "#1A3FC4");
-  	game5context.fillStyle = gradient;
-	ellipse(x, y, 60, 60);
-}
+//let x = 1;
+//let y = 1;
+//let easing = 0.05;
+//
+//function setup() {
+//	var game5 = createCanvas(800, 450);
+//	game5.parent('game5');
+//	game5context = game5.drawingContext;
+//	noStroke();
+//}
+//
+//function draw() {
+//	game5context.clearRect(0,0,800,450);
+//	
+//	let targetX = mouseX;
+//	let dx = targetX - x;
+//	x += dx * easing;
+//
+//	let targetY = mouseY;
+//	let dy = targetY - y;
+//	y += dy * easing;
+//	
+//	var gradient = game5context.createRadialGradient(x, y, 0, x, y, 30);
+//	gradient.addColorStop(0, "#446AF3");
+//  	gradient.addColorStop(1, "#1A3FC4");
+//  	game5context.fillStyle = gradient;
+//	ellipse(x, y, 60, 60);
+//}
 
 
 //---------- Game 7 ----------
@@ -175,7 +175,7 @@ function resetBall(){
     ball.x = game7.width/2;
     ball.y = game7.height/2;
     ball.velocityX = -ball.velocityX;
-    ball.speed = 7;
+    ball.speed = 10;
 }
 
 // draw the net
@@ -303,16 +303,16 @@ function startGame7() {
 	setTimeout(function() {
 		clearInterval(loop);
 		if (user.score >= com.score) {
-	        $('#win-text').css('display', 'block');
+	        $('#win-text').css('display', 'flex');
 		} else {
-			$('#lose-text').css('display', 'block');
+			$('#lose-text').css('display', 'flex');
 		}
 	}, 10000);
 }
 
 
 // ---------- Doodle ----------
-var color = $('.doodle-color .selected').css('background-color');
+var doodlecolor = $('.doodle-color .selected').css('background-color');
 var brushsize = document.getElementById('brush-size');
 var size = brushsize.value;
 var save = document.getElementById('doodle-save');
@@ -333,7 +333,7 @@ $('#doodle-canvas').mousedown(function(e) {
 		doodlecontext.lineJoin = 'round';
 		doodlecontext.lineCap = 'round';
 		doodlecontext.lineWidth = size;
-		doodlecontext.strokeStyle = color;
+		doodlecontext.strokeStyle = doodlecolor;
 		doodlecontext.stroke();
 		lastEvent = e;
 	}
@@ -346,7 +346,7 @@ $('#doodle-canvas').mousedown(function(e) {
 $('.doodle-color').on('click', 'li', function() {
   $(this).siblings().removeClass('selected');
   $(this).addClass('selected');
-  color = $(this).css('background-color');
+  doodlecolor = $(this).css('background-color');
 });
 
 $('.doodle-size').on('click', 'input', function() {
@@ -371,9 +371,36 @@ $('#doodle-share').click(function(){
 	setTimeout(AlertShow, 0);
 	setTimeout(AlertHide, 1000);
 	setTimeout(PopupHide, 1000);
-	share.setAttribute('download', 'myLDRR.png');
+	share.setAttribute('download', 'myLDRRimg.png');
 	share.setAttribute('href', doodlecanvas.toDataURL('image/png').replace('image/png', 'image/octet-stream'));
 });
+
+let saveFile = () => {
+    	
+	// Get the data from each element on the form.
+	const msg = document.getElementById('doodle-msg');
+
+	// This variable stores all the data.
+	let data = msg.value;
+
+	// Convert the text to BLOB.
+	const textToBLOB = new Blob([data], { type: 'text/plain' });
+	const sFileName = 'MyLDRRmsg.txt';	   // The file to save the data.
+
+	let newLink = document.createElement("a");
+	newLink.download = sFileName;
+
+	if (window.webkitURL != null) {
+		newLink.href = window.webkitURL.createObjectURL(textToBLOB);
+	}
+	else {
+		newLink.href = window.URL.createObjectURL(textToBLOB);
+		newLink.style.display = "none";
+		document.body.appendChild(newLink);
+	}
+
+	newLink.click(); 
+}
 
 function AlertShow(){
 	$('.alert').fadeIn();

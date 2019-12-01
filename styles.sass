@@ -71,10 +71,13 @@ h5
 	font-weight: 300
 	letter-spacing: 18px
 
+h6
+	font-size: 12px
+	font-weight: 300
+
 p
 	font-size: 14px
 	font-weight: 300
-	letter-spacing: 1px
 
 a
 	font-weight: 300
@@ -153,6 +156,20 @@ button
 	.header-right
 		+flex
 
+		a.restart
+			+size(200px,30px)
+			+flex
+			font-size: 12px
+			font-weight: 400
+			letter-spacing: 1px
+			color: $colorBlue
+			background-color: #fff
+			border-radius: 99em
+
+			&:hover
+				opacity: 0.5
+				transition: opacity 0.3s ease-in
+
 		a.facebook
 			+size(10px,18px)
 			display: inline-block
@@ -199,6 +216,9 @@ button
 
 .bold
 	font-weight: 700
+
+.italic
+	font-style: italic
 
 .blue
 	color: $colorBlue
@@ -355,6 +375,43 @@ button
 		to
 			opacity: 1
 
+.ins
+	+size(800px,450px)
+	+abpos(0,0)
+	+flex
+	background-color: rgba(255,255,255,0.8)
+	z-index: 1
+
+	.ins-con
+		+size(320px,initial)
+		+flex(flex-start,center)
+		flex-direction: column
+
+		.ins-title
+			+size(100%,initial)
+			font-size: 24px
+			font-weight: 700
+			color: $colorBlue
+			text-align: left
+			margin-bottom: 10px
+		.ins-text
+			font-size: 16px
+			font-weight: 400
+			color: $colorBlue
+			text-align: left
+			line-height: 24px
+			margin-bottom: 20px
+			span
+				color: $colorBlue
+		.ins-btn
+			+size(320px,60px)
+			+flex
+			border: 1px solid $colorBlue
+			border-radius: 2px
+			font-size: 16px
+			color: $colorBlue
+			letter-spacing: 1px
+
 
 /* Page Setting */
 .intro
@@ -414,7 +471,7 @@ button
 			animation-delay: 15s
 		
 
-.instructions 
+.about 
 	.container
 		+size(100%)
 		background-color: $colorBlue
@@ -461,19 +518,19 @@ button
 		.part2 .fade-in:nth-child(5)
 			animation-delay: 10.5s
 
-		.part2 .fade-in:nth-child(6)
+		.part3 .fade-in:nth-child(1)
 			animation-delay: 11.5s
 
-		.part3 .fade-in:nth-child(1)
+		.part3 .fade-in:nth-child(2)
 			animation-delay: 14s
 
-		.part3 .fade-in:nth-child(2)
+		.part3 .fade-in:nth-child(3)
 			animation-delay: 15s
 
-		.part3 .fade-in:nth-child(3)
+		.part3 .fade-in:nth-child(4)
 			animation-delay: 16s
 
-		.part3 .fade-in:nth-child(4)
+		.part3 .fade-in:nth-child(5)
 			animation-delay: 17s
 
 		.scroll
@@ -572,6 +629,20 @@ button
 						content: " "
 						background: url(images/icon_quote.svg) no-repeat
 	
+					.by
+						+flex(flex-end,center)
+						font-family: 'Maven Pro', sans-serif
+						font-size: 18px
+						width: 320px
+						margin-top: 20px
+						opacity: 0
+
+	
+						i
+							+size(40px,1px)
+							background-color: #fff
+							margin-right: 3px
+	
 					.fade-in-r:nth-child(1)
 						animation-delay: 0s
 					
@@ -582,6 +653,9 @@ button
 						animation-delay: 1s
 	
 					.fade-in-r:nth-child(4)
+						animation-delay: 1s
+	
+					.fade-in-r:nth-child(5)
 						animation-delay: 1s
 
 				.chapter-right
@@ -611,6 +685,7 @@ button
 					.tips
 						opacity: 0
 						margin-left: -10px
+						letter-spacing: 1px
 					
 					.fade-in-r
 						animation-delay: 2s
@@ -634,6 +709,9 @@ button
 					color: $colorBlue
 				h4
 					opacity: 0
+	
+				h6
+					opacity: 0
 				
 				.fade-in
 					animation-duration: 0.5s
@@ -652,7 +730,7 @@ button
 	
 			.scroll
 				opacity: 0
-				animation-delay: 2s
+				animation-delay: 1.8s
 
 	
 	ul.chapter-num
@@ -821,16 +899,6 @@ button
 		.game
 			#win-text, #lose-text
 				display: none
-				position: absolute
-				width: 800px
-				height: 450px
-				background-color: #fff
-				line-height: 450px
-				color: $colorBlue
-				z-index: 1000		
-				text-align: center
-				left: 0
-				top: 0
 			.btn-heart
 				+abpos(calc(50% - 55px),calc(50% - 55px))
 				z-index: 1

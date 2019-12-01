@@ -14,7 +14,7 @@ $(function(){
 	
 	// Fullpage
 	$('#fullpage').fullpage({
-			anchors:['intro','instructions','chapter','outro'],
+			anchors:['intro','about','chapter','outro'],
 			//slidesNavigation: true,
 			onLeave: function(index, nextIndex){
 				switch(index){
@@ -27,21 +27,23 @@ $(function(){
 						$('.intro .part3>a').removeClass('fade-in');
 					break;
 					case 2:
-						$('.instructions .part1').removeClass('fade-out fade-out1');
-						$('.instructions .part1>h1').removeClass('fade-in');
-						$('.instructions .part2').removeClass('fade-out fade-out2');
-						$('.instructions .part2>h1').removeClass('fade-in');
-						$('.instructions .part3>h1').removeClass('fade-in');
-						$('.instructions .scroll').removeClass('fade-in-s');
+						$('.about .part1').removeClass('fade-out fade-out1');
+						$('.about .part1>h1').removeClass('fade-in');
+						$('.about .part2').removeClass('fade-out fade-out2');
+						$('.about .part2>h1').removeClass('fade-in');
+						$('.about .part3>h1').removeClass('fade-in');
+						$('.about .scroll').removeClass('fade-in-s');
 					break;
 					case 3:
 						$('.chapter-left h5').removeClass('fade-in-r');
 						$('.chapter-left h2').removeClass('fade-in-r');
 						$('.chapter-left h3').removeClass('fade-in-r');
+						$('.chapter-left .by').removeClass('fade-in-r');
 						$('.chapter-right .game').removeClass('fade-in-r');
 						$('.chapter-right .tips').removeClass('fade-in');
 						$('.chapter-about-main h1').removeClass('fade-in');
 						$('.chapter-about-main h4').removeClass('fade-in');
+						$('.chapter-about-main h6').removeClass('fade-in');
 						$('#chapter-about8 .scroll').removeClass('fade-in-s');
 						$('#chapter-game3 #game3 .video-con').addClass('disappear');
 					break;
@@ -67,21 +69,23 @@ $(function(){
 						$('.intro .part3>a').addClass('fade-in');
 					break;
 					case 2:
-						$('.instructions .part1').addClass('fade-out fade-out1');
-						$('.instructions .part1>h1').addClass('fade-in');
-						$('.instructions .part2').addClass('fade-out fade-out2');
-						$('.instructions .part2>h1').addClass('fade-in');
-						$('.instructions .part3>h1').addClass('fade-in');
-						$('.instructions .scroll').addClass('fade-in-s');
+						$('.about .part1').addClass('fade-out fade-out1');
+						$('.about .part1>h1').addClass('fade-in');
+						$('.about .part2').addClass('fade-out fade-out2');
+						$('.about .part2>h1').addClass('fade-in');
+						$('.about .part3>h1').addClass('fade-in');
+						$('.about .scroll').addClass('fade-in-s');
 					break;
 					case 3:
 						$('.chapter-left h5').addClass('fade-in-r');
 						$('.chapter-left h2').addClass('fade-in-r');
 						$('.chapter-left h3').addClass('fade-in-r');
+						$('.chapter-left .by').addClass('fade-in-r');
 						$('.chapter-right .game').addClass('fade-in-r');
 						$('.chapter-right .tips').addClass('fade-in');
 						$('.chapter-about-main h1').addClass('fade-in');
 						$('.chapter-about-main h4').addClass('fade-in');
+						$('.chapter-about-main h6').addClass('fade-in');
 						$('#chapter-about8 .scroll').addClass('fade-in-s');
 						$('#chapter-game3 #game3 .video-con').removeClass('disappear');
 						document.getElementById('G3-1').currentTime = 0;
@@ -116,6 +120,7 @@ $(function(){
 					$('#chapter-game1 .chapter-left h5').addClass('fade-in-r');
 					$('#chapter-game1 .chapter-left h2').addClass('fade-in-r');
 					$('#chapter-game1 .chapter-left h3').addClass('fade-in-r');
+					$('#chapter-game1 .chapter-left .by').addClass('fade-in-r');
 					$('#chapter-game1 .chapter-right .game').addClass('fade-in-r');
 					$('#chapter-game1 .chapter-right .tips').addClass('fade-in');
 				}
@@ -131,6 +136,7 @@ $(function(){
 					$('#chapter-game2 .chapter-left h5').addClass('fade-in-r');
 					$('#chapter-game2 .chapter-left h2').addClass('fade-in-r');
 					$('#chapter-game2 .chapter-left h3').addClass('fade-in-r');
+					$('#chapter-game2 .chapter-left .by').addClass('fade-in-r');
 					$('#chapter-game2 .chapter-right .game').addClass('fade-in-r');
 					$('#chapter-game2 .chapter-right .tips').addClass('fade-in');
 				}
@@ -146,6 +152,7 @@ $(function(){
 					$('#chapter-game3 .chapter-left h5').addClass('fade-in-r');
 					$('#chapter-game3 .chapter-left h2').addClass('fade-in-r');
 					$('#chapter-game3 .chapter-left h3').addClass('fade-in-r');
+					$('#chapter-game3 .chapter-left .by').addClass('fade-in-r');
 					$('#chapter-game3 .chapter-right .game').addClass('fade-in-r');
 					$('#chapter-game3 .chapter-right .tips').addClass('fade-in');
 					$('#chapter-game3 #game3 .video-con').removeClass('disappear');
@@ -172,6 +179,7 @@ $(function(){
 					$('#chapter-game4 .chapter-left h5').addClass('fade-in-r');
 					$('#chapter-game4 .chapter-left h2').addClass('fade-in-r');
 					$('#chapter-game4 .chapter-left h3').addClass('fade-in-r');
+					$('#chapter-game4 .chapter-left .by').addClass('fade-in-r');
 					$('#chapter-game4 .chapter-right .game').addClass('fade-in-r');
 					$('#chapter-game4 .chapter-right .tips').addClass('fade-in');
 				}
@@ -187,6 +195,7 @@ $(function(){
 					$('#chapter-game5 .chapter-left h5').addClass('fade-in-r');
 					$('#chapter-game5 .chapter-left h2').addClass('fade-in-r');
 					$('#chapter-game5 .chapter-left h3').addClass('fade-in-r');
+					$('#chapter-game5 .chapter-left .by').addClass('fade-in-r');
 					$('#chapter-game5 .chapter-right .game').addClass('fade-in-r');
 					$('#chapter-game5 .chapter-right .tips').addClass('fade-in');
 				}
@@ -202,6 +211,7 @@ $(function(){
 					$('#chapter-game6 .chapter-left h5').addClass('fade-in-r');
 					$('#chapter-game6 .chapter-left h2').addClass('fade-in-r');
 					$('#chapter-game6 .chapter-left h3').addClass('fade-in-r');
+					$('#chapter-game6 .chapter-left .by').addClass('fade-in-r');
 					$('#chapter-game6 .chapter-right .game').addClass('fade-in-r');
 					$('#chapter-game6 .chapter-right .tips').addClass('fade-in');
 				}
@@ -210,6 +220,7 @@ $(function(){
 					$('.chapter-num>li:nth-child(6)').addClass('selected');
 					$('#chapter-about6 .chapter-about-main h1').addClass('fade-in');
 					$('#chapter-about6 .chapter-about-main h4').addClass('fade-in');
+					$('#chapter-about6 .chapter-about-main h6').addClass('fade-in');
 				}
 
 				if (index == 3 && slideIndex == 12){
@@ -217,6 +228,7 @@ $(function(){
 					$('#chapter-game7 .chapter-left h5').addClass('fade-in-r');
 					$('#chapter-game7 .chapter-left h2').addClass('fade-in-r');
 					$('#chapter-game7 .chapter-left h3').addClass('fade-in-r');
+					$('#chapter-game7 .chapter-left .by').addClass('fade-in-r');
 					$('#chapter-game7 .chapter-right .game').addClass('fade-in-r');
 					$('#chapter-game7 .chapter-right .tips').addClass('fade-in');
 				}
@@ -225,6 +237,7 @@ $(function(){
 					$('.chapter-num>li:nth-child(7)').addClass('selected');
 					$('#chapter-about7 .chapter-about-main h1').addClass('fade-in');
 					$('#chapter-about7 .chapter-about-main h4').addClass('fade-in');
+					$('#chapter-about7 .chapter-about-main h6').addClass('fade-in');
 				}
 
 				if (index == 3 && slideIndex == 14){
@@ -232,6 +245,7 @@ $(function(){
 					$('#chapter-game8 .chapter-left h5').addClass('fade-in-r');
 					$('#chapter-game8 .chapter-left h2').addClass('fade-in-r');
 					$('#chapter-game8 .chapter-left h3').addClass('fade-in-r');
+					$('#chapter-game8 .chapter-left .by').addClass('fade-in-r');
 					$('#chapter-game8 .chapter-right .game').addClass('fade-in-r');
 					$('#chapter-game8 .chapter-right .tips').addClass('fade-in');
 				}
@@ -240,6 +254,7 @@ $(function(){
 					$('.chapter-num>li:nth-child(8)').addClass('selected');
 					$('#chapter-about8 .chapter-about-main h1').addClass('fade-in');
 					$('#chapter-about8 .chapter-about-main h4').addClass('fade-in');
+					$('#chapter-about8 .chapter-about-main h6').addClass('fade-in');
 					$('#chapter-about8 .scroll').addClass('fade-in-s');
 				}
 			},
@@ -251,10 +266,12 @@ $(function(){
 					$('.chapter-left h5').removeClass('fade-in-r');
 					$('.chapter-left h2').removeClass('fade-in-r');
 					$('.chapter-left h3').removeClass('fade-in-r');
+					$('.chapter-left .by').removeClass('fade-in-r');
 					$('.chapter-right .game').removeClass('fade-in-r');
 					$('.chapter-right .tips').removeClass('fade-in');
 					$('.chapter-about-main h1').removeClass('fade-in');
 					$('.chapter-about-main h4').removeClass('fade-in');
+					$('.chapter-about-main h6').removeClass('fade-in');
 					$('#chapter-about8 .scroll').removeClass('fade-in-s');
 					$('#chapter-game3 #game3 .video-con').addClass('disappear');
 				}
@@ -264,10 +281,12 @@ $(function(){
 					$('.chapter-left h5').removeClass('fade-in-r');
 					$('.chapter-left h2').removeClass('fade-in-r');
 					$('.chapter-left h3').removeClass('fade-in-r');
+					$('.chapter-left .by').removeClass('fade-in-r');
 					$('.chapter-right .game').removeClass('fade-in-r');
 					$('.chapter-right .tips').removeClass('fade-in');
 					$('.chapter-about-main h1').removeClass('fade-in');
 					$('.chapter-about-main h4').removeClass('fade-in');
+					$('.chapter-about-main h6').removeClass('fade-in');
 					$('#chapter-about8 .scroll').removeClass('fade-in-s');
 					$('#chapter-game3 #game3 .video-con').addClass('disappear');
 				}
@@ -345,10 +364,12 @@ $(function(){
 	var	G8 = document.getElementById('G8');
 
 	$('#btnG1').click(function(){
+		$(this).css('display', 'none');
 		G1.play();
 	});
 
 	$('#btnG2').click(function(){
+		$(this).css('display', 'none');
 		G2.play();
 	});
 
@@ -357,6 +378,7 @@ $(function(){
 //	});
 
 	$('#btnG5').click(function(){
+		$(this).css('display', 'none');
 		G5.play();
 	});
 
@@ -369,6 +391,7 @@ $(function(){
 	});
 
 	$('#btnG8').click(function(){
+		$(this).css('display', 'none');
 		G8.play();
 	});
 
